@@ -39,6 +39,11 @@ body {
     @apply rounded-[2rem] border border-white/60 bg-white/75 shadow-soft backdrop-blur-xl;
   }
 
+  .premium-process-card {
+    @apply rounded-[2rem] border border-white/20 bg-[#5f6f52]/90 shadow-2xl backdrop-blur-md transition duration-500 hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(18,24,16,0.28)];
+    box-shadow: 0 24px 60px rgba(18, 24, 16, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
   .premium-button {
     @apply inline-flex items-center justify-center rounded-full border border-olive/15 bg-forest px-6 py-3 text-sm font-medium text-cream transition duration-300 hover:-translate-y-0.5 hover:bg-olive focus:outline-none focus:ring-2 focus:ring-wheat/50;
   }
