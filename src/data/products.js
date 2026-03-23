@@ -1,0 +1,130 @@
+export const categories = [
+  { id: 'all', label: 'Todo' },
+  { id: 'quesos', label: 'Quesos' },
+  { id: 'frutos-secos', label: 'Frutos secos' },
+  { id: 'huevos', label: 'Huevos de campo' },
+  { id: 'aceite', label: 'Aceite de oliva' },
+  { id: 'otros', label: 'Otros' },
+];
+
+export const coverageZones = ['Rancagua', 'Machalí', 'Graneros', 'San Francisco de Mostazal'];
+
+export const products = [
+  {
+    id: 'queso-mantecoso-1kg',
+    name: 'Queso mantecoso',
+    category: 'quesos',
+    format: '1 kg',
+    price: 12990,
+    featured: true,
+    active: true,
+    stock: 18,
+    tagline: 'Cremoso, madurado con textura noble y sabor redondo.',
+    image:
+      'https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'queso-cabra-500g',
+    name: 'Queso de cabra selección',
+    category: 'quesos',
+    format: '500 g',
+    price: 10490,
+    featured: false,
+    active: true,
+    stock: 10,
+    tagline: 'Perfil delicado y final persistente para tablas premium.',
+    image:
+      'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'almendras-500g',
+    name: 'Almendras tostadas',
+    category: 'frutos-secos',
+    format: '500 g',
+    price: 8490,
+    featured: true,
+    active: true,
+    stock: 22,
+    tagline: 'Tostado preciso para un crunch elegante y natural.',
+    image:
+      'https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'mix-nueces-350g',
+    name: 'Mix noble de nueces',
+    category: 'frutos-secos',
+    format: '350 g',
+    price: 7690,
+    featured: false,
+    active: true,
+    stock: 16,
+    tagline: 'Blend gourmet para picoteos y desayunos con carácter.',
+    image:
+      'https://images.unsplash.com/photo-1515543904379-3d757afe72e3?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'huevos-docena',
+    name: 'Huevos de campo',
+    category: 'huevos',
+    format: 'Docena',
+    price: 4990,
+    featured: true,
+    active: true,
+    stock: 30,
+    tagline: 'Color intenso, frescura diaria y origen seleccionado.',
+    image:
+      'https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'huevos-xl-18',
+    name: 'Huevos XL',
+    category: 'huevos',
+    format: 'Bandeja x 18',
+    price: 7290,
+    featured: false,
+    active: true,
+    stock: 14,
+    tagline: 'Ideal para familias y cocina diaria con estándar premium.',
+    image:
+      'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'aceite-oliva-500',
+    name: 'Aceite de oliva extra virgen',
+    category: 'aceite',
+    format: '500 ml',
+    price: 11990,
+    featured: true,
+    active: true,
+    stock: 12,
+    tagline: 'Frutado verde, elegante al paladar y de cosecha cuidada.',
+    image:
+      'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'aceitunas-marinadas',
+    name: 'Aceitunas marinadas',
+    category: 'otros',
+    format: '320 g',
+    price: 6390,
+    featured: false,
+    active: true,
+    stock: 24,
+    tagline: 'Aliño aromático con un perfil mediterráneo y suave.',
+    image:
+      'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'miel-cruda-750',
+    name: 'Miel cruda multifloral',
+    category: 'otros',
+    format: '750 g',
+    price: 8990,
+    featured: false,
+    active: true,
+    stock: 9,
+    tagline: 'Textura sedosa y notas florales para una mesa refinada.',
+    image:
+      'https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=1200&q=80',
+  },
+];
