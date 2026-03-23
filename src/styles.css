@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-parchment text-forest font-sans;
+  background-image:
+    radial-gradient(circle at top left, rgba(197, 164, 109, 0.16), transparent 30%),
+    radial-gradient(circle at top right, rgba(85, 98, 74, 0.12), transparent 28%),
+    linear-gradient(180deg, #fbf8f1 0%, #f6f0e3 100%);
+}
+
+::selection {
+  @apply bg-wheat/30 text-forest;
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-olive shadow-sm backdrop-blur;
+  }
+
+  .section-title {
+    @apply font-display text-4xl leading-none text-forest sm:text-5xl lg:text-6xl;
+  }
+
+  .glass-panel {
+    @apply rounded-[2rem] border border-white/60 bg-white/75 shadow-soft backdrop-blur-xl;
+  }
+
+  .premium-button {
+    @apply inline-flex items-center justify-center rounded-full border border-olive/15 bg-forest px-6 py-3 text-sm font-medium text-cream transition duration-300 hover:-translate-y-0.5 hover:bg-olive focus:outline-none focus:ring-2 focus:ring-wheat/50;
+  }
+
+  .premium-button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40;
+  }
+
+  .field-input {
+    @apply w-full rounded-2xl border border-olive/10 bg-white/85 px-4 py-3 text-sm text-forest placeholder:text-olive/45 shadow-sm outline-none transition focus:border-wheat/70 focus:ring-2 focus:ring-wheat/20;
+  }
+}
