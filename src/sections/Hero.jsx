@@ -1,4 +1,22 @@
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, Check, MessageCircle } from 'lucide-react';
+
+const purchaseSteps = [
+  {
+    number: '1',
+    title: 'Explora el catálogo',
+    description: 'Descubre quesos, frutos secos, huevos de campo y otros productos seleccionados.',
+  },
+  {
+    number: '2',
+    title: 'Agrega al carro',
+    description: 'Selecciona cantidades fácilmente con controles modernos.',
+  },
+  {
+    number: '3',
+    title: 'Envía tu pedido por WhatsApp',
+    description: 'Recibe confirmación rápida y coordinamos el despacho a tu domicilio.',
+  },
+];
 
 function Hero() {
   const goToProducts = () => {
@@ -14,8 +32,10 @@ function Hero() {
     <section id="inicio" className="section-shell pt-6">
       <div className="relative overflow-hidden rounded-[2.5rem] shadow-glass">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(25,31,23,0.78),rgba(25,31,23,0.38)_45%,rgba(25,31,23,0.6))]" />
-        <div className="relative grid min-h-[82vh] items-end px-6 py-10 sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:px-16 lg:py-16">
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(18,24,16,0.82),rgba(28,37,24,0.45)_42%,rgba(18,24,16,0.78))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(197,164,109,0.2),transparent_30%)]" />
+
+        <div className="relative grid min-h-[82vh] items-end gap-10 px-6 py-10 sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-16 lg:py-16">
           <div className="max-w-3xl animate-floatIn text-white">
             <span className="section-label border-white/20 bg-white/10 text-white">Directo del campo a tu hogar</span>
             <h1 className="mt-8 max-w-4xl font-display text-6xl leading-[0.92] text-white sm:text-7xl lg:text-[5.6rem]">
@@ -34,20 +54,41 @@ function Hero() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-4 lg:mt-0 lg:pl-12">
-            <div className="glass-panel p-6 text-white/90">
-              <p className="text-xs uppercase tracking-[0.3em] text-wheat">Selección boutique</p>
-              <p className="mt-3 font-display text-3xl text-white">Ingredientes con criterio premium</p>
-              <p className="mt-4 text-sm leading-6 text-white/75">
-                Quesos, huevos de campo, frutos secos y aceite de oliva curados por sabor, frescura y confianza.
-              </p>
-            </div>
-            <div className="ml-auto max-w-sm rounded-[2rem] border border-white/20 bg-white/10 p-5 text-white/85 backdrop-blur-md">
-              <p className="text-xs uppercase tracking-[0.28em] text-wheat/90">Despacho local</p>
-              <p className="mt-2 font-display text-3xl text-white">Rancagua y alrededores</p>
-              <p className="mt-3 text-sm leading-6 text-white/70">
-                Coordinamos tu pedido por WhatsApp para entregarlo con calidez, agilidad y presentación impecable.
-              </p>
+          <div className="lg:pl-10">
+            <div className="premium-process-card animate-fadeUp p-6 text-white sm:p-8">
+              <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/90">
+                CÓMO COMPRAR
+              </div>
+
+              <h2 className="mt-6 max-w-sm font-display text-4xl leading-tight text-white sm:text-[2.8rem]">
+                Compra fácil en 3 pasos
+              </h2>
+
+              <div className="mt-7 space-y-5">
+                {purchaseSteps.map((step) => (
+                  <div
+                    key={step.number}
+                    className="group flex gap-4 rounded-[1.75rem] border border-white/10 bg-white/5 p-4 transition duration-300 hover:border-white/20 hover:bg-white/10"
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/12 font-sans text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">
+                      {step.number}
+                    </div>
+                    <div>
+                      <p className="font-sans text-base font-semibold tracking-[0.01em] text-white sm:text-[1.02rem]">{step.title}</p>
+                      <p className="mt-2 font-sans text-sm leading-6 text-white/78">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={goToProducts}
+                className="mt-8 inline-flex items-center gap-2 font-sans text-sm font-medium text-white transition duration-300 hover:translate-x-1 hover:text-white/85"
+              >
+                <Check className="h-4 w-4 text-wheat" />
+                Comenzar compra <ArrowRight className="h-4 w-4" />
+              </button>
             </div>
           </div>
         </div>
