@@ -1,105 +1,99 @@
-import { ArrowRight, Check, MessageCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { useRef, useState } from 'react';
 
 const purchaseSteps = [
-  {
-    number: '1',
-    title: 'Explora el catálogo',
-    description: 'Descubre quesos, frutos secos, huevos de campo y otros productos seleccionados.',
-  },
-  {
-    number: '2',
-    title: 'Agrega al carro',
-    description: 'Selecciona cantidades fácilmente con controles modernos.',
-  },
-  {
-    number: '3',
-    title: 'Envía tu pedido por WhatsApp',
-    description: 'Recibe confirmación rápida y coordinamos el despacho a tu domicilio.',
-  },
+  'Arma tu carro',
+  'Agrega tus productos',
+  'Envía tu pedido por WhatsApp',
 ];
 
+const heroImage =
+  'https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1800&q=80';
+
 function Hero() {
+  const stepsRef = useRef(null);
+  const [isStepsFocused, setIsStepsFocused] = useState(false);
+
   const goToProducts = () => {
     document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const goToWhatsApp = () => {
-    const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '56900000000';
-    window.open(`https://wa.me/${whatsappNumber}`, '_blank', 'noopener,noreferrer');
+  const goToHowToBuy = () => {
+    stepsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setIsStepsFocused(true);
+    window.setTimeout(() => setIsStepsFocused(false), 1400);
   };
 
   return (
-    <section id="inicio" className="section-shell pt-5">
-      <div className="relative overflow-hidden rounded-[2.5rem] shadow-glass">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(16,22,15,0.88),rgba(24,34,22,0.52)_44%,rgba(14,20,13,0.85))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(197,164,109,0.2),transparent_30%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(18,24,16,0.35)_0%,transparent_28%,transparent_72%,rgba(18,24,16,0.28)_100%)]" />
+    <section id="inicio" className="section-shell pt-5 sm:pt-7">
+      <div className="relative overflow-hidden rounded-[2.6rem] border border-white/70 bg-[#f8f2e7] shadow-glass">
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/65 to-transparent" />
 
-        <div className="relative grid min-h-[82vh] items-end gap-10 px-6 py-10 sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-16 lg:py-16 xl:gap-16">
-          <div className="max-w-3xl text-white">
-            <span className="section-label border-white/20 bg-white/10 text-white">Directo del campo a tu hogar</span>
-            <h1 className="mt-8 max-w-4xl animate-editorialIn font-display text-6xl leading-[0.9] text-white drop-shadow-[0_10px_30px_rgba(10,14,9,0.45)] sm:text-7xl lg:text-[5.9rem]">
-              Alma de Granja, una selección gourmet con origen real.
+        <div className="relative grid lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)]">
+          <div className="relative z-10 px-6 py-10 sm:px-10 lg:px-12 lg:py-14 xl:px-16 xl:py-16">
+            <span className="section-label border-olive/15 bg-white/70 text-olive">Productos frescos y seleccionados</span>
+
+            <h1 className="mt-6 max-w-2xl animate-editorialIn font-display text-[2.7rem] leading-[0.9] tracking-tight text-forest sm:text-[3.5rem] lg:text-[4.3rem]">
+              Sabores de campo que llegan directo a tu mesa
             </h1>
-            <p className="mt-6 max-w-2xl animate-fadeUp text-base leading-7 text-white/85 [animation-delay:140ms] [animation-fill-mode:both] sm:text-lg">
-              Productos nobles, despachos locales y una experiencia de compra diseñada para sentirse tan cuidada como la mesa que quieres armar.
+
+            <p className="mt-5 max-w-xl animate-fadeUp text-base leading-7 text-bark/85 [animation-delay:120ms] [animation-fill-mode:both] sm:text-lg">
+              Quesos, huevos de campo, frutos secos y más. Arma tu carro en pocos pasos y envía tu pedido fácilmente por WhatsApp.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
                 type="button"
                 onClick={goToProducts}
-                className="premium-button animate-fadeUp animate-pulseGlow gap-2 [animation-delay:220ms] [animation-fill-mode:both]"
+                className="premium-button animate-fadeUp gap-2 [animation-delay:200ms] [animation-fill-mode:both]"
               >
                 Ver productos <ArrowRight className="h-4 w-4" />
               </button>
               <button
                 type="button"
-                onClick={goToWhatsApp}
-                className="premium-button-secondary animate-fadeUp gap-2 [animation-delay:300ms] [animation-fill-mode:both]"
+                onClick={goToHowToBuy}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-olive/20 bg-white/70 px-6 py-3 text-sm font-medium text-olive transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-forest focus:outline-none focus:ring-2 focus:ring-wheat/40"
               >
-                Pedir por WhatsApp <MessageCircle className="h-4 w-4" />
+                Cómo comprar <ArrowRight className="h-4 w-4" />
               </button>
             </div>
-          </div>
 
-          <div className="animate-slideSoftRight lg:pl-10">
-            <div className="premium-process-card p-6 text-white sm:p-8">
-              <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/90">
-                CÓMO COMPRAR
-              </div>
+            <div
+              id="como-comprar"
+              ref={stepsRef}
+              className={`mt-9 rounded-3xl border border-white/85 bg-white/70 px-4 py-4 shadow-sm backdrop-blur-sm transition duration-300 sm:px-5 ${
+                isStepsFocused ? 'ring-2 ring-wheat/60 ring-offset-2 ring-offset-[#f8f2e7]' : ''
+              }`}
+            >
+              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-olive/75">Paso a paso</p>
 
-              <h2 className="mt-6 max-w-sm font-display text-4xl leading-tight text-white sm:text-[2.8rem]">
-                Compra fácil en 3 pasos
-              </h2>
-
-              <div className="mt-7 space-y-4">
-                {purchaseSteps.map((step) => (
-                  <div
-                    key={step.number}
-                    className="group flex gap-4 rounded-[1.75rem] border border-white/14 bg-white/[0.07] p-4 transition duration-300 hover:border-white/30 hover:bg-white/[0.13]"
-                  >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 font-sans text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22)]">
-                      {step.number}
+              <div className="mt-3 flex flex-col gap-3 md:flex-row md:items-center md:gap-2 lg:gap-3">
+                {purchaseSteps.map((step, index) => (
+                  <div key={step} className="flex min-w-0 flex-1 items-center gap-2.5">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-wheat/45 bg-[#fffaf0] text-xs font-semibold text-olive shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
+                      {index + 1}
                     </div>
-                    <div>
-                      <p className="font-sans text-base font-semibold tracking-[0.01em] text-white sm:text-[1.02rem]">{step.title}</p>
-                      <p className="mt-2 font-sans text-sm leading-6 text-white/78">{step.description}</p>
-                    </div>
+                    <p className="text-sm font-medium leading-5 text-forest/90">{step}</p>
+                    {index < purchaseSteps.length - 1 && (
+                      <span className="ml-auto hidden text-olive/35 md:inline-flex lg:text-olive/45">→</span>
+                    )}
                   </div>
                 ))}
               </div>
-
-              <button
-                type="button"
-                onClick={goToProducts}
-                className="mt-8 inline-flex items-center gap-2 font-sans text-sm font-medium text-white transition duration-300 hover:translate-x-1 hover:text-white/85"
-              >
-                <Check className="h-4 w-4 text-wheat" />
-                Comenzar compra <ArrowRight className="h-4 w-4" />
-              </button>
             </div>
           </div>
+
+          <div className="relative min-h-[290px] sm:min-h-[380px] lg:min-h-[660px]">
+            <img
+              src={heroImage}
+              alt="Tabla con productos frescos de campo Alma de Granja"
+              className="h-full w-full object-cover object-center"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#17150f]/30 via-transparent to-[#17150f]/10" />
+          </div>
+
+          <div className="pointer-events-none absolute inset-y-0 left-[39.2%] hidden w-20 -skew-x-[15deg] bg-[#f8f2e7] shadow-[14px_0_36px_rgba(41,49,38,0.12)] lg:block xl:left-[40.5%]" />
         </div>
       </div>
     </section>
