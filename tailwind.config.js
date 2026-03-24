@@ -29,9 +29,17 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(26px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        editorialIn: {
+          '0%': { opacity: '0', transform: 'translateY(22px)', letterSpacing: '0.06em' },
+          '100%': { opacity: '1', transform: 'translateY(0)', letterSpacing: '0em' },
+        },
         fadeUp: {
           '0%': { opacity: '0', transform: 'translateY(18px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideSoftRight: {
+          '0%': { opacity: '0', transform: 'translateX(24px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         pulseGlow: {
           '0%, 100%': { boxShadow: '0 10px 30px rgba(197, 164, 109, 0.15)' },
@@ -40,7 +48,9 @@ export default {
       },
       animation: {
         floatIn: 'floatIn 700ms ease-out forwards',
+        editorialIn: 'editorialIn 680ms cubic-bezier(0.2, 0.65, 0.2, 1) forwards',
         fadeUp: 'fadeUp 700ms ease-out forwards',
+        slideSoftRight: 'slideSoftRight 700ms cubic-bezier(0.2, 0.65, 0.2, 1) forwards',
         pulseGlow: 'pulseGlow 2.5s ease-in-out infinite',
       },
     },

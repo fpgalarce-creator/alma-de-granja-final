@@ -12,7 +12,7 @@ function ProductsSection({ activeCategory, onCategoryChange }) {
   }, [activeCategory]);
 
   return (
-    <section id="productos" className="section-shell pt-24">
+    <section id="productos" className="section-shell pt-28">
       <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
         <SectionHeading
           eyebrow="Catálogo"
@@ -22,7 +22,7 @@ function ProductsSection({ activeCategory, onCategoryChange }) {
         <CategoryFilter categories={categories} activeCategory={activeCategory} onSelect={onCategoryChange} />
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

@@ -21,9 +21,10 @@ const values = [
 
 function AboutSection() {
   return (
-    <section id="sobre-nosotros" className="section-shell pt-24">
+    <section id="sobre-nosotros" className="section-shell pt-28">
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="rounded-[2.5rem] border border-white/70 bg-white/75 p-8 shadow-soft backdrop-blur-xl sm:p-10">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-soft backdrop-blur-xl sm:p-10">
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-wheat/55 to-transparent" />
           <SectionHeading
             eyebrow="Sobre nosotros"
             title="Una marca de campo contemporánea, cálida y profundamente comercial"
@@ -33,9 +34,9 @@ function AboutSection() {
 
         <div className="grid gap-5">
           {values.map(({ icon: Icon, title, description }) => (
-            <article key={title} className="rounded-[2rem] border border-white/65 bg-[#fffdf9]/80 p-6 shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-card">
+            <article key={title} className="rounded-[2rem] border border-white/65 bg-[#fffdf9]/84 p-6 shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-card">
               <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-wheat/12 text-wheat">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-wheat/30 bg-wheat/10 text-wheat">
                   <Icon className="h-6 w-6" />
                 </div>
                 <div>

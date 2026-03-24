@@ -14,8 +14,8 @@ function SectionHeading({ eyebrow, title, description, align = 'left' }) {
       )}
     >
       <span className="section-label">{eyebrow}</span>
-      <h2 className="section-title mt-6">{title}</h2>
-      <p className="mt-5 text-base leading-7 text-olive/80 sm:text-lg">{description}</p>
+      <h2 className="section-title mt-6 max-w-[24ch]">{title}</h2>
+      <p className="mt-6 max-w-2xl text-base leading-7 text-olive/80 sm:text-lg">{description}</p>
     </div>
   );
 }
