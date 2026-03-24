@@ -13,7 +13,7 @@ function ProductCard({ product, highlight = false }) {
     <article
       ref={ref}
       className={clsx(
-        'group relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/80 p-4 shadow-card backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:shadow-soft',
+        'group relative overflow-hidden rounded-[2.1rem] border border-white/65 bg-white/[0.86] p-4 shadow-card backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:shadow-soft',
         highlight ? 'min-h-[420px]' : 'min-h-[410px]',
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0',
       )}
@@ -35,14 +35,14 @@ function ProductCard({ product, highlight = false }) {
         <div>
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h3 className="font-display text-3xl leading-none text-forest">{product.name}</h3>
-              <p className="mt-2 text-sm font-medium uppercase tracking-[0.2em] text-olive/60">{product.format}</p>
+              <h3 className="font-display text-[2rem] leading-[0.95] text-forest">{product.name}</h3>
+              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.24em] text-olive/60">{product.format}</p>
             </div>
-            <span className="rounded-full border border-wheat/20 bg-wheat/10 px-3 py-2 text-sm font-semibold text-bark">
+            <span className="rounded-full border border-wheat/20 bg-wheat/10 px-3 py-2 text-sm font-semibold text-bark shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
               {formatPrice(product.price)}
             </span>
           </div>
-          <p className="mt-4 max-w-sm text-sm leading-6 text-olive/75">{product.tagline}</p>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-olive/78">{product.tagline}</p>
         </div>
 
         <div className="mt-6 flex items-center justify-between gap-3">

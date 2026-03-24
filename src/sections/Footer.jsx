@@ -9,7 +9,7 @@ const footerLinks = [
 
 function Footer() {
   return (
-    <footer className="border-t border-white/60 bg-[#f3ede0] py-12">
+    <footer className="border-t border-white/60 bg-[#f3ede0]/95 py-14">
       <div className="section-shell grid gap-10 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
         <div>
           <p className="font-display text-4xl text-forest">Alma de Granja</p>
@@ -21,7 +21,7 @@ function Footer() {
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-olive/50">Links rápidos</p>
           <div className="mt-4 space-y-3">
             {footerLinks.map((link) => (
-              <a key={link.href} href={link.href} className="block text-sm text-forest/80 transition hover:text-forest">
+              <a key={link.href} href={link.href} className="block text-sm text-forest/80 transition hover:translate-x-0.5 hover:text-forest">
                 {link.label}
               </a>
             ))}

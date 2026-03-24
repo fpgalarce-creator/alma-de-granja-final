@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 function CategoryFilter({ categories, activeCategory, onSelect }) {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-3.5">
       {categories.map((category) => {
         const active = category.id === activeCategory;
         return (
@@ -13,8 +13,8 @@ function CategoryFilter({ categories, activeCategory, onSelect }) {
             className={clsx(
               'rounded-full border px-5 py-3 text-sm font-medium transition duration-300',
               active
-                ? 'border-forest bg-forest text-cream shadow-md'
-                : 'border-olive/15 bg-white/70 text-olive hover:-translate-y-0.5 hover:border-wheat/60 hover:bg-white',
+                ? 'border-forest bg-forest text-cream shadow-[0_10px_24px_rgba(41,49,38,0.24)]'
+                : 'border-olive/15 bg-white/75 text-olive shadow-sm hover:-translate-y-0.5 hover:border-wheat/55 hover:bg-white hover:text-forest',
             )}
           >
             {category.label}

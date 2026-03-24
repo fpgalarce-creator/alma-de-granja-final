@@ -11,11 +11,22 @@ html {
 }
 
 body {
-  @apply bg-parchment text-forest font-sans;
+  @apply bg-parchment text-forest font-sans antialiased;
   background-image:
     radial-gradient(circle at top left, rgba(197, 164, 109, 0.16), transparent 30%),
     radial-gradient(circle at top right, rgba(85, 98, 74, 0.12), transparent 28%),
-    linear-gradient(180deg, #fbf8f1 0%, #f6f0e3 100%);
+    linear-gradient(180deg, #fcf9f2 0%, #f5efe2 100%);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='%236c5741' fill-opacity='0.45'%3E%3Ccircle cx='14' cy='20' r='1'/%3E%3Ccircle cx='80' cy='43' r='1'/%3E%3Ccircle cx='121' cy='11' r='1'/%3E%3Ccircle cx='36' cy='95' r='1'/%3E%3Ccircle cx='159' cy='68' r='1'/%3E%3Ccircle cx='101' cy='117' r='1'/%3E%3Ccircle cx='55' cy='150' r='1'/%3E%3Ccircle cx='148' cy='149' r='1'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 ::selection {
@@ -24,15 +35,15 @@ body {
 
 @layer components {
   .section-shell {
-    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10;
+    @apply relative z-[1] mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10;
   }
 
   .section-label {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-olive shadow-sm backdrop-blur;
+    @apply inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/75 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.32em] text-olive shadow-sm backdrop-blur;
   }
 
   .section-title {
-    @apply font-display text-4xl leading-none text-forest sm:text-5xl lg:text-6xl;
+    @apply font-display text-4xl leading-[0.94] text-forest sm:text-5xl lg:text-6xl;
   }
 
   .glass-panel {
@@ -40,16 +51,19 @@ body {
   }
 
   .premium-process-card {
-    @apply rounded-[2rem] border border-white/20 bg-[#5f6f52]/90 shadow-2xl backdrop-blur-md transition duration-500 hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(18,24,16,0.28)];
-    box-shadow: 0 24px 60px rgba(18, 24, 16, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    @apply rounded-[2.1rem] border border-white/25 bg-[rgba(76,90,63,0.72)] shadow-2xl backdrop-blur-lg transition duration-500 hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(18,24,16,0.28)];
+    box-shadow:
+      0 30px 60px rgba(18, 24, 16, 0.27),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 -14px 30px rgba(18, 24, 16, 0.15);
   }
 
   .premium-button {
-    @apply inline-flex items-center justify-center rounded-full border border-olive/15 bg-forest px-6 py-3 text-sm font-medium text-cream transition duration-300 hover:-translate-y-0.5 hover:bg-olive focus:outline-none focus:ring-2 focus:ring-wheat/50;
+    @apply inline-flex items-center justify-center rounded-full border border-olive/15 bg-forest px-6 py-3 text-sm font-medium text-cream shadow-[0_16px_36px_rgba(23,33,22,0.26)] transition duration-300 hover:-translate-y-0.5 hover:bg-olive hover:shadow-[0_20px_42px_rgba(23,33,22,0.3)] focus:outline-none focus:ring-2 focus:ring-wheat/50;
   }
 
   .premium-button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40;
+    @apply inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/40;
   }
 
   .field-input {

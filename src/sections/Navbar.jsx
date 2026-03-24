@@ -34,8 +34,8 @@ function Navbar({ onCategorySelect }) {
       <div
         className={`section-shell flex items-center justify-between rounded-full border px-5 py-4 transition duration-300 sm:px-6 ${
           scrolled
-            ? 'border-white/70 bg-white/80 shadow-soft backdrop-blur-2xl'
-            : 'border-white/20 bg-white/10 shadow-glass backdrop-blur-md'
+            ? 'border-white/80 bg-white/84 shadow-soft backdrop-blur-2xl'
+            : 'border-white/45 bg-white/56 shadow-glass backdrop-blur-xl'
         }`}
       >
         <a href="#inicio" className="flex items-center gap-3">
@@ -49,9 +49,9 @@ function Navbar({ onCategorySelect }) {
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          <a href="#inicio" className="text-sm font-medium text-forest/80 transition hover:text-forest">Inicio</a>
+          <a href="#inicio" className="rounded-full px-2 py-1 text-sm font-medium text-forest/80 transition hover:bg-white/70 hover:text-forest">Inicio</a>
           <div className="group relative">
-            <button type="button" className="flex items-center gap-2 text-sm font-medium text-forest/80 transition hover:text-forest">
+            <button type="button" className="flex items-center gap-2 rounded-full px-2 py-1 text-sm font-medium text-forest/80 transition hover:bg-white/70 hover:text-forest">
               Productos <ChevronDown className="h-4 w-4" />
             </button>
             <div className="pointer-events-none absolute left-0 top-full mt-4 w-64 translate-y-3 rounded-[1.5rem] border border-white/70 bg-white/90 p-3 opacity-0 shadow-soft backdrop-blur-xl transition duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
@@ -69,7 +69,7 @@ function Navbar({ onCategorySelect }) {
             </div>
           </div>
           {menuItems.slice(1).map((item) => (
-            <a key={item.href} href={item.href} className="text-sm font-medium text-forest/80 transition hover:text-forest">
+            <a key={item.href} href={item.href} className="rounded-full px-2 py-1 text-sm font-medium text-forest/80 transition hover:bg-white/70 hover:text-forest">
               {item.label}
             </a>
           ))}
@@ -79,7 +79,7 @@ function Navbar({ onCategorySelect }) {
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="relative rounded-full border border-white/60 bg-white/80 p-3 text-forest shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+            className="relative rounded-full border border-white/65 bg-white/85 p-3 text-forest shadow-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
             aria-label="Abrir carrito"
           >
             <ShoppingBag className="h-5 w-5" />
@@ -89,7 +89,7 @@ function Navbar({ onCategorySelect }) {
           </button>
           <button
             type="button"
-            className="rounded-full border border-white/60 bg-white/80 p-3 text-forest shadow-sm transition hover:bg-white lg:hidden"
+            className="rounded-full border border-white/65 bg-white/85 p-3 text-forest shadow-sm transition hover:bg-white hover:shadow-md lg:hidden"
             onClick={() => setMobileOpen((current) => !current)}
             aria-label="Menú"
           >
@@ -99,7 +99,7 @@ function Navbar({ onCategorySelect }) {
       </div>
 
       {mobileOpen ? (
-        <div className="section-shell mt-3 rounded-[2rem] border border-white/70 bg-white/90 p-5 shadow-soft backdrop-blur-xl lg:hidden">
+        <div className="section-shell mt-3 rounded-[2rem] border border-white/75 bg-white/92 p-5 shadow-soft backdrop-blur-xl lg:hidden">
           <div className="space-y-3">
             <a href="#inicio" className="block rounded-2xl px-4 py-3 text-sm font-medium text-forest transition hover:bg-cream" onClick={() => setMobileOpen(false)}>
               Inicio
